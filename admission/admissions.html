@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions</title>
+    <script src="sliderengine/jquery.js"></script>
+    <script src="sliderengine/amazingslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
+    <script src="sliderengine/initslider-1.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Allerta+Stencil&display=swap');
+        *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            overflow: auto;
+            font-family: 'lato';
+        }
+        .section-1{
+            width: 100%;
+            background-color: #063d6c;
+        }
+        .section-1-container{
+            width: 72%;
+            margin: 0px auto;
+        }
+        .logo-heading{
+            display: inline-flex;
+
+        }
+        .logo-heading .main-heading{
+            line-height: 11px;
+            margin:40px;
+        }
+        .logo-heading .main-heading  a{
+            text-decoration: none;
+            color: rgb(206,228,241);
+            font-size: 20px;
+        }
+        .logo-heading .main-heading h4{
+            color: white;
+            font-size: 20px;
+        }
+        .nav2{
+            text-align: center;
+            width: 100%;
+            margin: 0px auto;
+        }
+        .nav2 ul{
+            display: inline-flex;
+            list-style: none;
+        }
+        .nav2 ul li{
+            width: 190px;
+            margin: 10px 0px;
+            padding: 10px 0px;
+        }
+        .nav2 ul li a{
+            text-decoration: none;
+            font-size: 14px;
+            color: rgb(206,228,241);
+        }
+        .nav2 ul li:hover {
+            background-color:rgb(206,228,241);
+            border-radius: 3px;
+        }
+        .nav2 ul li:hover a {
+            color:#063d6c;
+        }
+        .section-2{
+            background-color: rgb(206,228,241);
+            width: 100%;
+            padding-bottom: 50px;
+        }
+        .section-2-container{
+            width: 73%;
+            margin: 0px auto;
+        }
+        .three-divs{
+            display: inline-flex;
+            flex-flow: row wrap;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .three-divs img{
+            border-radius: 5px;
+        }
+        .div-titles{
+            display: inline-flex;
+            flex-flow: row wrap;
+        }
+        .div-titles h3{
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            font-family: 'Allerta Stencil';
+            font-weight: lighter;
+            margin-right: 75px;
+            
+        }
+        .admission-circular{
+            background-color: rgb(149,202,64);
+            color: rgb(67,91,29);
+            font-family: 'Times New Roman', Times, serif;
+            border: 5px solid white;
+            width: 100%;
+            margin: 0px auto;
+        }
+        .admission-circular h2{
+            text-align: center;
+        }
+        .admission-circular p{
+            width: 500px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin: 0px auto;
+        }
+        .last-section{
+            width: 100%;
+            background-color: white;
+            margin: 10px auto;
+            padding-bottom: 40px;
+            border-radius:5px;
+            display: inline-flex;
+            justify-content: space-around;
+            
+        }
+        .right-body-ls{
+            width: 33%;
+        }
+        .left-body-ls{
+            width: 60%;
+        }
+        .heading-ls{
+            color: rgb(53,79,42);
+        }
+        .left-body-ls .para1{
+            color: rgb(0,85,171);
+            font-size: 20px;
+            margin-top: 16px;
+            word-spacing: 5px;
+            letter-spacing: -1px;
+            text-align: justify;
+            text-justify:inter-word;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .left-body-ls .para2{
+            margin-top: 16px;
+            word-spacing: 3px;
+            text-align: justify;
+            text-justify:inter-word;
+            letter-spacing: -1px;
+            font-family:'Times New Roman', Times, serif;
+        }
+        .left-body-ls .para3{
+            margin-top: 16px;
+            word-spacing: 3px;
+            letter-spacing: -1px;
+            text-align: justify;
+            text-justify:inter-word;
+            font-family:'Times New Roman', Times, serif;        }
+        .news-body{
+            display: inline-flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .calender{
+            width: 70px;
+            height: 70px;
+            box-shadow: 1px 1px 5px 1px grey;
+            margin-right: 10px;
+            border-radius: 10px
+        }
+        .yellow-strip{
+            background-color:rgb(255,164,10) ;
+            border-top-left-radius:10px;
+            border-top-right-radius: 10px;
+            margin: 3px;
+            width: 64px;
+            height: 20px;
+        }
+        .dot{
+            background-color: white;
+            border-radius: 50%;
+            height: 8px;
+            width: 8px;
+            display: block;
+            position: relative;
+            top:6px;
+            left: 5px;
+        }
+        .readmore{
+            background-color: white;
+            width: 95px;
+            height:fit-content;
+            padding: 5px;
+            border-radius: 5px;
+            box-shadow: 1px 1px 5px 1px grey;
+            margin-top: 20px;
+            padding: 10px 3px;
+            font-size: 14px;
+        }
+        .readmore a{
+            text-decoration:none ;
+            background-color: rgb(0,118,198);
+            color: white;
+            border-radius: 5px;
+            padding: 7px 10px;
+            text-align: center;
+            width: 150px;
+        
+        }
+        .grey-strip{
+            background:linear-gradient(lightgrey, white);
+            margin: 3px;
+            width: 64px;
+            height: 40px;
+            font-size: 30px;
+            text-align: center;
+        }
+        .news-text{
+            width: 200px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 16px;
+            padding: 5px;
+            
+        }
+        .news-text a{
+            text-decoration: none;
+            font-size: 14px;
+            color: black;
+        }
+        .dr-msg img{
+            margin-right: 20px;
+            margin-top:20px;
+        }
+        .ql-body{
+            display: inline-flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .icon{
+            padding: 3px;
+            width: 26px;
+            height: 26px;
+            box-shadow: 1px 1px 5px 1px grey;
+            margin-right: 10px;
+            border-radius: 5px;
+            background-color: white;
+            box-shadow: 1px 1px 5px 1px grey;
+        }
+        .icon-strip .fas{
+            background-color:rgb(255,164,10) ;
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            padding: 3px;
+            color: white;
+        }
+        
+        .ql-text{
+            width: 200px;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 16px;
+            padding: 5px;    
+        }
+        .ql-text a{
+            text-decoration: none;
+            font-size: 14px;
+            color: black;
+        }
+        .adm-footer{
+            font-size: 12px;
+            text-align: center;
+            margin-top: 20px;
+            line-height: 2em;
+            color:rgba(53,79,42, 0.9);
+
+        }
+    </style>
+<body>
+    <div class="section-1">
+        <div class="section-1-container">
+            <div class="logo-heading">
+                <div><img  src="./muet-logo2.JPG" alt="logo"></div>    
+                <div class="main-heading">
+                        <h4>DIRECTORATE OF ADMISSION</h4><br>
+                        <a href="">Mehran University Of Engineering & Technology</a>
+                </div>
+            </div>    
+            <div class="amazingslider-wrapper" id="amazingslider-wrapper-1" style="display:block;position:relative; width:960px; height:fit-content; margin:10px auto 5px; border: 5px solid white;">
+                <div class="amazingslider" id="amazingslider-1" style="display:block;position:relative;margin:0 auto;" >
+                    <ul class="amazingslider-slides" style="display:none;" >
+                        <li><img src="./1.jpg"/></li>
+                        <li><img src="./2.jpg"/></li>
+                        <li><img src="./3.jpg"/></li>
+                        <li><img src="./5.jpg"/></li>
+                        <li><img src="./6" alt="blood"/></li>
+                        <li><img src="./7.jpg"/></li>
+                    </ul>
+                <div style="padding-bottom: 5px;" class="amazingslider-engine"><a href="http://amazingslider.com" title="Responsive jQuery Slideshow">Responsive jQuery Slideshow</a></div>
+                </div>
+            </div>
+            <div class="nav2">
+                <ul>
+                    <li><a href="../University.html">HOME</a></li>
+                    <li><a href="">DISTRIBUTION OF SEATS</a></li>
+                    <li><a href="">ADMISSION POILICY</a></li>
+                    <li><a href="">BS PROGRAMS</a></li>
+                    <li><a href="">ADMISSION SCHEMES</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="section-2">
+        <div class="section-2-container">
+            <div class="three-divs">
+                <div class="first-box"><img src="./calc.jpg" alt="" width="280" height="200" ></div>
+                <div class="second-box"><img src="./prospectus.png" alt="" width="280" height="200"></div>
+                <div class="third-box"><img src="./fees.jpg" alt="" width="280" height="200"></div>
+            </div>
+            <div class="div-titles">
+                <div class="t1"><h3>Weighted Percentage <br> Calculator</h3></div>
+                <div class="t2"><h3>Undergraduated Prospectus<br>Session 2020-21 <h3></div>
+                <div class="t3"><h3>Fee Structure</h3></div>
+            </div>
+            <div class="admission-circular">
+                <h2>*Circular*</h2>
+                <p>All the newly admitted students of PhD Degree are hereby informed that your classes will be commenced with effect from Friday, March 26, 2021. You are advised to report your respective departments/institutues for further details and guidance.</p>
+            </div>
+            <div class="last-section">
+                <div class="left-body-ls">
+                    <h1 class="heading-ls">WHY MUET?</h1>
+                    <p class="para1">
+                        Mehran University of Engineering and Technology ranked 1st in Province of Sindh and 2nd amongst Public Sector Engineering Universities in Pakistan, this year by HEC.</p>
+                    <p class="para2">
+                        Mehran UET aims to promote technological change and sustainable development through higher education, research and outreach. Towards this end, it will provide a rewarding and challenging environment for ffaculty, staff and students.
+                    </p>
+                    <p class="para3">
+                        Mehran UET is becoming a role model to other universities with desire to grow and flourish through engagement. This university is achieving this by working more closely with students, communities, industries, regional employers and with government at all levels. This year is golden jubilee celebration of Mehran UET. It is a dream of every invidual at Mehran UET that with the dedicated, committed and motivated team who work together to reaffirm and pledge on the occasion of Golden jubilee celebrations to keep up the name of the University as has been the tradition. Over the years, Mehran UET has focused on four core elements: becoming a national leader in the quality of our academic programs; being universally recognized for the quality of the learning experience; creating an environment that truly values and is enriched by pluralistic diversity; and expanding the mission to address our society's most challenging needs.
+                    </p>
+                    <div class="readmore"><a href="">Read More</a></div>
+                    <hr style="border-top: 1px dashed grey; margin:20px 0px;" >
+                    <div>
+                        <h1 class="heading-ls">DIRECTOR'S MESSAGE</h1>
+                        <p class="dr-msg"><img align=left src="./dir_pic.jpg" alt="" width="200" height="200"> <p class="para2">We have highly qualified, experienced and dedicated faculty.</p>
+                        <p class="para2">MUET offers admission to applicants who appear to have the highest potential for graduate study and who, with the benefit of a graduate education, are the most likely to contribute substantially to their academic or professional fields through teaching, research, or professional practice.</p>
+                        <p class="para3">Determined to do even better, we have launched a comprehensive review of our curricula and our career advisory services to ensure that our students are given every possible chance to apply their academic achievement in productive careers.</p></p>
+                    </div>
+                    <div class="readmore"><a href="">Read More</a></div>
+                </div>
+                <div class="right-body-ls">
+                    <h1 class="heading-ls">LATEST NEWS</h1>
+                    <div class="news-body">
+                        <div class="calender">
+                            <div class="yellow-strip"><span class="dot"></span></div>
+                            <div class="grey-strip">18</div>
+                        </div>
+                        <div class="news-text">March, 2021 <br> <a href="">list of candidates selected in Undergraduated scheme</a></div>
+                    </div>  
+                    <div class="news-body">
+                        <div class="calender">
+                            <div class="yellow-strip"><span class="dot"></span></div>
+                            <div class="grey-strip">10</div>
+                        </div>
+                        <div class="news-text">March, 2021 <br> <a href="">list of candidates selected in Undergraduated scheme</a></div>
+                    </div> 
+                    <div class="news-body">
+                        <div class="calender">
+                            <div class="yellow-strip"><span class="dot"></span></div>
+                            <div class="grey-strip">9</div>
+                        </div>
+                        <div class="news-text">March, 2021 <br> <a href="">list of candidates selected in Undergraduated scheme</a></div>
+                    </div>
+                    <div class="news-body">
+                        <div class="calender">
+                            <div class="yellow-strip"><span class="dot"></span></div>
+                            <div class="grey-strip">8</div>
+                        </div>
+                        <div class="news-text">March, 2021 <br> <a href="">list of candidates selected in Undergraduated scheme</a></div>
+                    </div>
+                    <div class="readmore">
+                    <a href="" >Read More</a>
+                    </div>
+                    <hr style="border-top: 1px dashed grey; margin:20px 0px;" >
+                    <h1 class="heading-ls">QUICK LINKS</h1>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">TEST SCHEDULE</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">URBAN AREAS OF SINDH</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">ACADEMIC SCHEDULE</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">MIGRATION RULES</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">ADMISSION POLICY</a></div>
+                    </div>
+                    <hr style="border-top: 1px dashed grey; margin:20px 0px;" >
+                    <h1 class="heading-ls">DOWNLOADS</h1>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">Undertaking(Affidavit)</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">Medical Certificate</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">Proforma for Refund</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">Employee Undertaking</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">Admission Form - 2nd Year</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">Admission Form - 3rd Year</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">Admission Form - 4th Year</a></div>
+                    </div>
+                    <div class="ql-body">
+                        <div class="icon">
+                            <div class="icon-strip"><i class="fas fa-angle-double-right"></i></span></div>
+                        </div>
+                        <div class="ql-text"><a href="">Proforma Smart Enrolment Card</a></div>
+                        
+                    </div>
+                    </div>
+            </div>
+            <p class="adm-footer">  HOME  |  ADMISSION POLICY  |   MIGRATION RULES  |  FEE STRUCTURE  |  PROSPECTUS  |  CONTACT US  |  WEB TEAM <br> © 2013 Directorate of Admissions, Mehran University of Engineering and Technology, Jamshoro, 76062, Sindh, Pakistan. All Rights Reserved</p>
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="sliderengine/jquery.js"></script>
+    <script src="sliderengine/amazingslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
+    <script src="sliderengine/initslider-1.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
+</head>
+<style>
+*{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    body{
+      overflow-x:hidden;
+    }
+    .main-container{
+      width: 100%;
+    }
+    .lsq{
+        width: 983px;
+        margin: 0px auto;
+    }
+    .lsq-container{
+        display: inline-flex;
+    }
+    .left-body-lsq{
+        margin: 12px;
+    }
+    .right-body-lsq{
+        margin-left:242px;
+
+    }
+    .right-body-lsq .search-box input[type=search]{
+        background-color: rgb(245,248,250);
+        border: 1px solid rgb(155,171,176);
+        border-radius: 5px;
+        padding: 4px 0px 3px 0px;
+        margin:5px 0px 3px 1px;
+        width: 172px;
+    }
+    .right-body-lsq .search-box{
+        width: 290px;
+        background-color: rgb(238,238,238);
+        margin: 0px auto;
+        padding: 6px 25px 5px 25px;
+        border-bottom-left-radius:10px  ;
+        border-bottom-right-radius:10px ;
+        border: 1px solid rgb(204,204,204);
+        }
+    .right-body-lsq input[type=submit]{
+        background-color: rgb(239,235,231);
+        border: 1px solid rgb(204,204,204);
+        height: 25px;
+        font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+        font-weight: normal;
+        padding: 2px 3px 1px 3px;
+        margin-left: 2px;
+        font-size: 15px;
+        color: rgb(25,71,101);
+    }
+    .quick-links {
+    position: relative;
+    left: 27px;
+    top: 15px;
+    }
+    .quick-links select{
+    background-color: rgb(248,248,248);
+    width: 250px;
+    color: rgb(39,99,140);
+    background-color: rgb(248,248,248);
+    border: none;
+    border-bottom: 1px solid rgb(204,204,204);
+    border-radius: 3px;
+    padding:2px 0px;
+    }
+    .clr{
+        clear: both;
+    }
+
+    .nav-bar1{
+    margin-left: 10px;
+    }
+    .nav-bar1 ul{
+      display: inline-flex;
+      list-style: none;
+        }
+    .nav-bar1 ul li{
+            width:fit-content;
+            margin: 0px 5px 2px 0px;
+            padding:8px 10px 2px 9px;
+            background-color:rgb(225,225,225) ;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px; 
+        }
+    .nav-bar1 ul li a{
+            text-decoration: none;
+            color:rgb(21,75,112);
+            font-size: 0.82em;
+            font-family: 'lato';
+            font-weight:bolder;
+        }
+    .nav-bar1 ul li:hover {
+            background-color: rgb(49,149,221);
+            border-radius: 3px;
+            
+        }
+    .strip1{
+            background-color:rgb(46, 117, 165);
+            width: 100%;
+            height: 20px;
+    }
+    .strip2{
+            background-image: linear-gradient(rgb(190,223,236), white);
+            width: 100%;
+            height: 60px;
+            margin-top: 2px;
+    }
+   .university-container{
+       width: 100%;
+   }
+   .left-body{
+       float: left;
+       width: 30%;
+       margin-top: -40px;
+   }
+   .lb-container{
+       float: right;
+       background-color: white;
+       border-radius: 10px;
+       margin: 5px;
+       box-shadow: 1px 1px 1px 1px grey;
+       width: 230px;
+   }
+   .left-body .lb-container h3{
+       Background-color: rgb(28,86,126);
+       color: white;
+       text-align: right;
+       border-top-left-radius: 5px;
+       border-top-right-radius: 5px;
+       padding: 5px;
+       font-size: 16px;
+       font-weight: lighter;
+   }
+
+   .left-body ul {
+       list-style: none;
+       text-align: left;
+   }
+   .left-body ul li{
+       line-height: 23px;
+   }
+   .left-body ul li .fas{
+       color: rgb(39,99,140);
+       margin: 0px 5px;
+       font-size: 10px;
+   }
+   .left-body ul li a {
+       text-decoration: none;
+       color:rgb(81,114,140);
+       font-weight: bold;
+       font-size: 14px;
+   }
+   .right-body{
+       float: right;
+       width: 70%;
+       margin-top: -40px;
+   }
+   .rb-container{
+       float: left;
+       margin: 0px 0px 0px 30px;
+   }
+   .rb-container h1 {
+       color: rgb(102,102,102);
+       font-size:24px;
+   }
+   .right-body h4{
+       color:rgb(39,99,140);
+       font-size: 13px;
+       margin-top: 10px;
+   }
+   .right-body p{
+       color: rgb(102,102,102);
+       font-size: 13px;
+   }
+   .clr{
+       clear: both;
+   }
+   .copyright-note{
+        width: 100%;
+        font-size: 12px;
+        color: rgb(104,104,104);
+        margin: 10px auto;
+        text-align: center;
+   }
+</style>
+<body>
+    <div class="top-container">
+        <div class="lsq">
+          <div class="lsq-container">
+            <div class="left-body-lsq"><img src="./muet_logo.png" alt="muet.logo" title="muet logo"></div>
+            <div class="right-body-lsq">
+              <div class="search-bar">
+                <div class="search-box">
+                  <input  type="search" name="search-button"/>
+                  <input  type="submit" value="Search" />
+                </div>
+              </div>
+              <div class="quick-links">
+                <select>
+                  <option selected="selected">— Quick Links —</option>
+                  <option>2<sup>nd</sup> International Coal Conference '15</option>
+                  <option>Security</option>
+                  <option>MUET SZAB Khairpur Mir's Website</option>
+                  <option >International Conference EESD'14</option>
+                  <option >Centre of Knowledge Transfer (CKT)</option>
+                  <option >WSN4DC'13</option>
+                  <option >Tender Notice</option>
+                  <option >SMS Alert</option>
+                  <option >Covid'19 Information Centre</option>
+                  <option >Employees Welfare Cell</option>
+                  <option >Transport Section</option>
+                  <option >Campus Digital Resources</option>
+                  <option >Webmail</option>
+                  <option >PM's National Laptop Scheme</option>
+                  <option >MUET Harassment Complaint Cell</option>
+                </select>          
+              </div>
+            </div>                  
+          </div>
+          <div class="nav-bar1">
+            <ul>
+              <li> <a href="./University.html">UNIVERSITY</a></li>
+              <li> <a href="./academics.html">ACADEMICS</a></li>
+              <li> <a href="./admission/admissions.html">ADMISSIONS</a></li>
+              <li> <a href="./departments.html">DEPARTMENTS</a></li>
+              <li> <a href="">INSTITUTES</a></li>
+              <li> <a href="">DIRECTORATES</a></li>
+              <li> <a href="">RESEARCH</a></li>
+              <li> <a href="">SUSTAINABILITY</a></li>
+            </ul>
+          </div>    
+        </div>
+      </div>
+    <div class="clr"></div>
+      <div class="strip1"></div>
+      <div class="strip2"></div>
+  <div class="university-container">
+    <div class="left-body">
+        <div class="lb-container">
+        <h3>University</h3>
+        <ul>
+            <li><i class="fas fa-angle-double-right"></i><a href="">News</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Circular & Notifications</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Downloads</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Photo Gallery</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Vice Chancellor's Messege</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">A Brief History</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Mission</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Officers</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Membership & Association</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Directory</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Where's MUET</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Vision</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Office of the Registrar</a></li>
+            <li><i class="fas fa-angle-double-right"></i><a href="">Organization Chart</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="right-body">
+      <div class="rb-container">
+        <h1>Univeristy</h1>
+        <img src="./about-university.JPG" alt="">
+        <h4>Vice Chancellor's Messege</h4>
+        <p>Vice Chancellor of Mehran University</p>
+        <h4>Brief History</h4>
+        <p>A brief history about Mehran University</p>
+        <h4>Mission</h4>
+        <p>Mehran UET's Mission</p>
+        <h4>News</h4>
+        <p>Latest campus news update</p>
+        <h4>Circulars & Notifications</h4>
+        <p>Important circulars and notifications from the University administration</p>
+        <h4>Officers</h4>
+        <p>Administrative Officers of the University</p>
+        <h4>Membership & Association</h4>
+        <p>University linkages with various other organizations and universities</p>
+        <h4>Directory</h4>
+        <p>Telephone numbers of officers and faculty members</p>
+        <h4>Where's MUET</h4>
+        <p>Map and Geographical location of Mehran University</p>
+        <h4>Downloads</h4>
+        <p>All the downloads on Mehran University's website</p>
+        </div>
+        <div class="clr"></div>
+        <hr style="width: 930px; margin:20px 0px 0px 30px;">
+      </div>
+    </div>
+    <div class="clr"></div>
+    <hr style="margin-top: 30px;">
+    <p class="copyright-note">© 2009-2020. Mehran University of Engineering & Technology, Jamshoro, 76062, Sindh, Pakistan. All Rights Reserved.</p>
+    <hr style="margin-bottom: 20px;">
+</body>
+</html>

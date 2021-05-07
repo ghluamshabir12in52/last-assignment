@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="sliderengine/jquery.js"></script>
+    <script src="sliderengine/amazingslider.js"></script>
+    <link rel="stylesheet" type="text/css" href="sliderengine/amazingslider-1.css">
+    <script src="sliderengine/initslider-1.js"></script>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<style>
+    *{
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+    body{
+      overflow-x:hidden;
+    }
+    .main-container{
+      width: 100%;
+    }
+    .lsq{
+        width: 983px;
+        margin: 0px auto;
+    }
+    .lsq-container{
+        display: inline-flex;
+    }
+    .left-body-lsq{
+        margin: 12px;
+    }
+    .right-body-lsq{
+        margin-left:242px;
+
+    }
+    .right-body-lsq .search-box input[type=search]{
+        background-color: rgb(245,248,250);
+        border: 1px solid rgb(155,171,176);
+        border-radius: 5px;
+        padding: 4px 0px 3px 0px;
+        margin:5px 0px 3px 1px;
+        width: 172px;
+    }
+    .right-body-lsq .search-box{
+        width: 290px;
+        background-color: rgb(238,238,238);
+        margin: 0px auto;
+        padding: 6px 25px 5px 25px;
+        border-bottom-left-radius:10px  ;
+        border-bottom-right-radius:10px ;
+        border: 1px solid rgb(204,204,204);
+        }
+    .right-body-lsq input[type=submit]{
+        background-color: rgb(239,235,231);
+        border: 1px solid rgb(204,204,204);
+        height: 25px;
+        font-family: Tahoma,Verdana,Arial,Helvetica,sans-serif;
+        font-weight: normal;
+        padding: 2px 3px 1px 3px;
+        margin-left: 2px;
+        font-size: 15px;
+        color: rgb(25,71,101);
+    }
+    .quick-links {
+    position: relative;
+    left: 27px;
+    top: 15px;
+    }
+    .quick-links select{
+    background-color: rgb(248,248,248);
+    width: 250px;
+    color: rgb(39,99,140);
+    background-color: rgb(248,248,248);
+    border: none;
+    border-bottom: 1px solid rgb(204,204,204);
+    border-radius: 3px;
+    padding:2px 0px;
+    }
+    .clr{
+        clear: both;
+    }
+
+    .nav-bar1{
+    margin-left: 10px;
+    }
+    .nav-bar1 ul{
+      display: inline-flex;
+      list-style: none;
+        }
+    .nav-bar1 ul li{
+            width:fit-content;
+            margin: 0px 5px 2px 0px;
+            padding:8px 10px 2px 9px;
+            background-color:rgb(225,225,225) ;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px; 
+        }
+    .nav-bar1 ul li a{
+            text-decoration: none;
+            color:rgb(21,75,112);
+            font-size: 0.82em;
+            font-family: 'lato';
+            font-weight:bolder;
+        }
+    .nav-bar1 ul li:hover {
+            background-color: rgb(49,149,221);
+            border-radius: 3px;
+            
+        }
+    .strip1{
+            background-color:rgb(46, 117, 165);
+            width: 100%;
+            height: 20px;
+    }
+    .strip2{
+            background-image: linear-gradient(rgb(190,223,236), white);
+            width: 100%;
+            height: 60px;
+            margin-top: 2px;
+    }
+    .c-1,.c-2,.c-3 {
+      position: absolute;
+      display: block;
+      right: 2em;
+      width: 60%;
+      font-size: 16px;
+      animation-duration: 12s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+}
+.c-1 {
+  animation-name: anim-1;
+}
+
+.c-2 {
+  animation-name: anim-2;
+}
+
+.c-3 {
+  animation-name: anim-3;
+}
+
+@keyframes anim-1 {
+  0%,
+  8.3% {
+    right: -100%;
+    opacity: 0;
+  }
+  8.3%,
+  25% {
+    right: 25%;
+    opacity: 1;
+  }
+  33.33%,
+  100% {
+    right: 110%;
+    opacity: 0;
+  }
+}
+@keyframes anim-2 {
+  0%,
+  33.33% {
+    right: -100%;
+    opacity: 0;
+  }
+  41.63%,
+ 58.29%  {
+    right: 25%;
+    opacity: 1;
+  }
+  66.66%,
+  100% {
+    right: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-3 {
+  0%,
+  66.66% {
+    right: -100%;
+    opacity: 0;
+  }
+  74.96%,
+  91.62% {
+    right: 25%;
+    opacity: 1;
+  }
+  100% {
+    right: 110%;
+    opacity: 0;
+  }
+}
+.slide-container{
+  background-color: rgb(252,253,255);
+  width: 100%;
+  height: 30px;
+  padding: 5px;
+  margin: 10px auto;
+}
+.slide-container a{
+  text-decoration: none;
+}
+.slide-container li{
+  list-style: none;
+}
+.sc1{
+  float: left;
+  color: brown;
+}
+.sc2{
+  color: white;
+}
+.sc2 a{
+  margin-left: 120px;
+}
+.sc3{
+  float: right;
+  color: blue;
+}
+.clr{
+  clear: both;
+} 
+.bottom-wrapper{
+  width: 70%;
+  margin: 10px auto;
+}
+.flex-container{
+  display: inline-flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-top: 20px;
+}
+ .box1 { 
+  background:0px 20px white url("gender-equity-banner.png") no-repeat;
+  width: 280px;
+  margin-right:10px;
+ }
+ .flex-container .box1 h3{
+   background-color: rgb(34,173,184);
+   color: white;
+   position:relative;
+   width: 100%;
+   margin: 0px 20px 0px 0px ; 
+ }
+ .flex-container .box1 p{
+   margin: 110px 10px 10px 0px ;
+ }
+ .flex-container .box1 ul{
+   list-style: none;
+   display: inline-block;
+ }
+ .flex-container .box1 ul li a{
+  text-decoration: none;
+  color: rgb(39,99,140);
+  font-weight: bolder;
+  font-size: 13px;
+ }
+ .fas{
+   margin: 0px 10px ;
+   color: rgb(39, 99, 140);
+  }
+  .box2 { 
+  background:0px 20px white url("covid-19.png") no-repeat;
+  width: 280px;
+  margin-left:10px ;
+ }
+ .flex-container .box2 ul{
+   list-style: none;
+   display: inline-block;
+   margin-top: 110px;
+ }
+ .flex-container .box2 ul li a{
+  text-decoration: none;
+  color: rgb(39,99,140);
+  font-weight: bolder;
+  font-size: 13px;
+ }
+ .box3{
+  width: 340px;
+  margin-left:20px ;
+ }
+ .NE-container{
+  display: inline-flex;
+  flex-flow: column nowrap;
+
+ }
+ 
+ .flex-container .box2 h3{
+   background-color: rgb(184,34,74);
+   position:relative;
+   width: 100%;
+   margin: 0px 20px 0px 0px ;
+ }
+ .flex-container .box3 h3{
+   background-color: rgb(255,165,0);
+   color: white;
+   position:relative;
+   width: 100%;
+   margin: 0px 20px 0px 0px ;
+ }
+ .flex-container div h3{
+  margin: -20px -20px;
+  text-align: center;
+  color: white;
+  width: 300px; 
+  }
+ .NE-1, .NE-2, .NE-3 {
+  display: inline-flex;
+  font-weight: bold;
+ }
+ .NE-logo{
+  width: fit-content;
+  height:fit-content;
+  margin: 10px;
+ }
+ .note{
+  vertical-align: center;
+  width: 250px;
+  margin: 10px;
+  color: rgb(39,99,140);
+  font-size: 13px;
+ }
+ .NE-viewall{
+   position: relative;
+   top: 10;
+   background-color: rgb(238,238,238);
+   color: rgb(39,99,140);
+   margin-top: 10px;
+   text-align: right;
+   padding: 5px;
+   width: 100%;
+ }
+ .NE-viewall a{
+   text-decoration: none;
+   color: rgb(39,99,140);
+   
+ }
+ .flex2-container{
+  display: inline-flex;
+  flex-flow: row wrap;
+  width: 100%;
+  margin-top: 20px;
+}
+ .safao { 
+  background:0px 20px white url("sfao-banner.png") no-repeat;
+  width: 280px;
+  margin-right:45px; 
+ }
+ .flex2-container .safao h3{
+   background-color: rgb(184,34,74);
+   color: white;
+   position:relative;
+   width: 100%;
+   margin: 0px 20px 0px 0px ; 
+ }
+ .flex2-container .safao p{
+   margin: 110px 10px 10px 0px ;
+ }
+ .flex2-container .safao ul{
+   list-style: none;
+   display: inline-block;
+ }
+ .flex2-container .safao ul li a{
+  text-decoration: none;
+  color: rgb(39,99,140);
+  font-weight: bolder;
+  font-size: 13px;
+ }
+  .oric { 
+  background:0px 20px white url("oric-banner.png") no-repeat;
+  width: 280px;
+  margin-right: 45px;
+ }
+ .flex2-container .oric h3{
+   background-color: rgb(107,223,59);
+   color: white;
+   position:relative;
+   width: 100%;
+   margin: 0px 20px 0px 0px ; 
+ }
+ .flex2-container p{
+   margin: 110px 10px 10px 0px ;
+ }
+ .flex2-container .oric ul{
+   list-style: none;
+   display: inline-block;
+ }
+ .flex2-container .oric ul li a{
+  text-decoration: none;
+  color: rgb(39,99,140);
+  font-weight: bolder;
+  font-size: 13px;
+ }
+ .flex2-container .oric ul li .fas{
+   margin-right: 0px 10px 0px 10px;
+  }
+  .news-letter { 
+  background:0px 20px white url("newsletter-vol5-issue-1.png") no-repeat;
+  width: 280px;
+ }
+ .flex2-container .news-letter h3{
+   background-color: rgb(34,173,184);
+   color: white;
+   position:relative;
+   width: 100%;
+   margin: 0px 20px 0px 0px ; 
+ }
+ .flex2-container .news-letter p{
+   margin: 110px 10px 10px 0px ;
+ }
+ .flex2-container .news-letter ul{
+   list-style: none;
+ }
+ .flex2-container .news-letter ul li a{
+  text-decoration: none;
+  color: rgb(39,99,140);
+  font-weight: bolder;
+  font-size: 13px;
+ }
+ .flex2-container .news-letter ul li .fas{
+   margin-right:10px;
+  }
+  #four-divs{
+  display:flex;
+  flex-flow: row wrap;
+  justify-content: space-between; 
+}
+ .div1 { 
+  background: white url("dreamspark-banner-small.png") no-repeat center;
+  width: 190px; 
+  height: 100px;
+  margin:100px 50px 0px 0px;
+  padding: 20px;
+  border: 4px solid white;
+  box-shadow:1px 1px 5px 1px grey;
+ }
+ .div2 { 
+  background: white url("alumni-banner-small.png") no-repeat center;
+  width: 200px; 
+  height: 100px;
+  margin:100px 50px 0px 0px;
+  padding-top: 5px;
+  border: 4px solid white;
+  box-shadow:1px 1px 5px 1px grey;
+ }
+ .div3 { 
+  background: white url("exam-banner-small.png") no-repeat center;
+  width: 200px; 
+  height: 100px;
+  margin:100px 50px 0px 0px;
+  padding: 4px;
+  border: 4px solid white;
+  box-shadow:1px 1px 5px 1px grey; 
+ }
+ .div4 { 
+  background: white url("pm-laptop.png") no-repeat center;
+  width: 200px; 
+  height: 100px;
+  margin:100px 0px 0px 0px;
+  padding: 5px;
+  border: 4px solid white;
+  box-shadow:1px 1px 5px 1px grey;
+ }
+ .table1 {
+   box-shadow: 1px 1px 5px 1px grey;
+   margin-top: 50px;
+   border-spacing:0;
+   width: 950px;
+ }
+ .table1 .table-heading th{
+   height: 40px;
+   color: brown;
+ }
+ .table1 tr td {
+   text-align: center;
+   width: 305px;
+   padding: 10px 0px;
+ }
+ .table1 tr td a {
+   text-decoration: none;
+   color: rgb(39, 99, 140);
+   font-size: 14px;
+   }
+   .row1, .row3{
+     background-color: rgb(244,248,249);
+   }
+   .table2{
+    box-shadow: 1px 1px 5px 1px grey;
+    margin-top: 50px;
+    border-spacing:0;
+    width: 950px;
+   }
+   .table2 .table2-heading h2{
+     text-align: center;
+     font-size: 14px;
+     font-weight: bold;
+     width: 920px;
+   }
+ .table2 tr td {
+   text-align: center;
+   width: 250px;
+   padding: 10px 0px;
+ }
+ .table2 tr td a {
+   text-decoration: none;
+   color: rgb(39, 99, 140);
+   font-size: 15px;
+   }
+   .table2-bottom{
+    background-color: rgb(244,248,249);
+   }
+   .table2-note{
+     color: rgb(180,180,180);
+     margin-top:20px ;
+   }
+   .copyright-note{
+     font-size: 12px;
+     color: rgb(104,104,104);
+     margin: 10px auto;
+   }
+
+</style>
+<body>
+                  <!-- C -->
+  <div class="top-container">
+    <div class="lsq">
+      <div class="lsq-container">
+        <div class="left-body-lsq"><img src="./muet_logo.png" alt="muet.logo" title="muet logo"></div>
+        <div class="right-body-lsq">
+          <div class="search-bar">
+            <div class="search-box">
+              <input  type="search" name="search-button"/>
+              <input  type="submit" value="Search" />
+            </div>
+          </div>
+          <div class="quick-links">
+            <select>
+              <option selected="selected">— Quick Links —</option>
+              <option>2<sup>nd</sup> International Coal Conference '15</option>
+              <option>Security</option>
+              <option>MUET SZAB Khairpur Mir's Website</option>
+              <option >International Conference EESD'14</option>
+              <option >Centre of Knowledge Transfer (CKT)</option>
+              <option >WSN4DC'13</option>
+              <option >Tender Notice</option>
+              <option >SMS Alert</option>
+              <option >Covid'19 Information Centre</option>
+              <option >Employees Welfare Cell</option>
+              <option >Transport Section</option>
+              <option >Campus Digital Resources</option>
+              <option >Webmail</option>
+              <option >PM's National Laptop Scheme</option>
+              <option >MUET Harassment Complaint Cell</option>
+            </select>          
+          </div>
+        </div>                  
+      </div>
+      <div class="nav-bar1">
+        <ul>
+          <li> <a href="./University.html">UNIVERSITY</a></li>
+          <li> <a href="./academics.html">ACADEMICS</a></li>
+          <li> <a href="./admission/admissions.html">ADMISSIONS</a></li>
+          <li> <a href="./departments.html">DEPARTMENTS</a></li>
+          <li> <a href="">INSTITUTES</a></li>
+          <li> <a href="">DIRECTORATES</a></li>
+          <li> <a href="">RESEARCH</a></li>
+          <li> <a href="">SUSTAINABILITY</a></li>
+        </ul>
+      </div>    
+    </div>
+  </div>
+<div class="clr"></div>
+  <div class="strip1"></div>
+  <div class="strip2">
+                  <!-- amazing-slider -->
+    <div class="amazingslider-wrapper" id="amazingslider-wrapper-1" style="display:block; max-width:960px;margin:0px auto; padding-top:8px ;">
+      <div class="amazingslider" id="amazingslider-1">
+        <ul class="amazingslider-slides" style="display:none;">
+          <li><img src="./Muet img1.jpg" alt="1"  title="1" /></li>
+          <li><img src="Muet img2.jpg" alt="2021-01-26 11-14-20"  title="2021-01-26 11-14-20" /></li>
+          <li><img src="muet img 3-4.jpg" alt="2021-01-31 17-29-49"  title="2021-01-31 17-29-49" /></li>
+          <li><img src="./muet img6.jpg" alt="aaaaaaa"  title="aaaaaaa" /></li>
+          <li><img src="./Muet img7.jpg" alt="blood"  title="blood" /></li>
+        </ul>
+      </div>
+      <div class="amazingslider-engine"><a href="http://amazingslider.com" title="Responsive jQuery Slideshow">Responsive jQuery Slideshow</a></div>
+  </div>
+  <div class="bottom-wrapper">
+                <!-- notification-slider -->
+    <div class="slide-container">
+      <ul>
+        <li class="sc1">Notification</li>
+        <li class="sc2">
+          <span class="c-1"><a href="">HEC Inter University Squash Final... 28/01/2021 - 12:43pm</a></span>
+          <span class="c-2"><a href="">List of Rejected Candidates PG 2020-21 30/01/2021 - 8:49pm</a></span>
+          <span class="c-3"><a href="">Circular for online Convocation 04/04/2021 - 7:10pm</a></span></li>
+        <li class="sc3"><a href="">View all</a></li>
+      </ul>
+    </div>
+    <div class="clr"></div>
+    <div class="flex-container">
+      <div class="box1">
+        <h3>G.E</h3>
+        <p>Gender issues are central to the achievement of strategic plans and Assistance Objectives (AO), and MUET along with USAID strives to promote gender equality, in which both men and women have equal opportunity to benefit from and contribute to economic, social, cultural, and political development; enjoy socially valued resources and rewards; and realize their human rights.</p>
+        <ul>
+          <li><i class="fas fa-angle-double-right"></i><a href="" ></a><a href="">Gender Equity (USPCAS-W)</a></li>
+          <li><i class="fas fa-angle-double-right"></i><a href="" ></a><a href="">MUET Gender Policy Statement</a></li>
+          <li><i class="fas fa-angle-double-right"></i><a href="" ></a><a href="">Harassment Complaint Cell</a></li>
+        </ul>      
+    </div>
+    <div class="box2">
+      <h3>Covid</h3>
+      <ul>
+        <li><i class="fas fa-angle-double-right"></i><a href="" ></a><a href="">COVID'19 INFORMATION CENTER</a></li>
+      </ul>
+    </div>
+    <div class="box3">
+      <h3>New&Events</h3>
+        <!-- first Notification -->
+      <div class="NE-container">
+        <div class="NE-1">
+          <div class="NE-logo">
+            <img src="http://muet.edu.pk/sites/default/files/imagecache/news-thumbs/imagefield_default_images/muet-news.jpg" alt="" width="55" height="55">
+          </div>
+          <div class="note">
+            <p>Faculty positions at Mehran UET, Jamshoro</p>
+          </div>
+        </div><hr style="width: 340px;">
+        <!-- second-Notificatoin -->
+        <div class="NE-2">
+          <div class="NE-logo">
+            <img src="http://muet.edu.pk/sites/default/files/imagecache/news-thumbs/imagefield_default_images/muet-news.jpg" alt="" width="55" height="55">
+          </div>
+          <div class="note">
+            <p>Result of PhD Pre-Admission TEST held on 09-02-2021 and 10-02-2021</p>
+          </div>
+        </div>
+        <hr style="width: 340px;">
+        <!-- 3rd Notification -->
+        <div class="NE-3">
+          <div class="NE-logo">
+            <img  src="http://muet.edu.pk/sites/default/files/imagecache/news-thumbs/imagefield_default_images/muet-news.jpg" alt="" width="55" height="55">
+          </div>
+          <div class="note">
+            <p>Online Declamation Contest Organized by Department of Electronic Engineering, MUET Jamshoro</p>            
+          </div>
+        </div>
+        <hr style="width: 340px;">
+      </div>
+      <div class="NE-viewall">
+        <a href="">View all</a>
+      </div>
+    </div>
+    <div class="flex2-container">
+      <div class="safao">
+        <h3>Student Financial Aid Office</h3>
+        <p>This office is dedicated to elevate the socio-economic position of the needy & deserving undergraduate students by providing access to quality education through need-based and merit-based Scholarships / Financial Assistances and interest free educational Loans.</p>
+        <ul>
+          <li><i class="fas fa-angle-double-right"></i><a href=""S></a><a href="">Student Finiancial Aid Office</a></li>
+        </ul>
+      </div>
+      <div class="oric">
+        <h3>ORIC</h3>
+        <p>Office of Research, Innovation and Commercialization (ORIC) is organizes various Continual professional development (CPD) courses.</p>
+        <ul>
+          <li><i class="fas fa-angle-double-right"></i><a href=""></a><a href="">Read more about ORIC</a></li>
+        </ul>
+      </div>
+      <div class="news-letter">
+        <h3>NEWSLETTER VOL-V, ISSUE-I</h3>
+        <p>MUET Newsletter is a quarterly publication of Public Relations Office.
+          Newsletter showcases memorable events and news related to the University</p>
+        <ul>
+          <li><i class="fas fa-angle-double-right"></i><a href="" ></a><a href="">Student Finiancial Aid Office</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="clr"></div>
+      <div id="four-divs">
+      <div class="div1"></div>
+      <div class="div2"></div>
+      <div class="div3"></div>
+      <div class="div4"></div>
+    </div>
+    <table class="table1" >
+      <tr class="table-heading">
+        <th>Research</th>
+        <th>Links</th>
+        <th>Contact</th>
+      </tr>
+      <tr class="row1">
+        <td><a href="">Mehran University Research journals</a></td>
+        <td><a href="">Microsoft Dream Spark Account</a></td>
+        <td><a href="">Google Map and Directions|Telephone Directory </a></td>
+      </tr>
+      <tr class="row2">
+        <td><a href="">Research Groups</a></td>
+        <td><a href="">Smart ID Card: Employees|Student</a></td>
+        <td><a href="">Email: registrar@admin.muet.edu.pk <br> Phone: +92 (22) 2772250-73</a></td>
+      </tr>
+      <tr class="row3">
+        <td><a href="">International Conferences</a></td>
+        <td><a href="">Anti-Plagiarism Service</a></td>
+        <td><a href="">Address: Mehran University of Engineering & Technology,Jamshoro, 76062, Sindh, Pakistan</a></td>
+      </tr>
+    </table>
+    <table class="table2">
+      <tr class="table2-heading">
+        <td colspan="3">
+          <img src="./fb-icon-small.png" alt="" width="20" height="20"><br>
+          <h2>Facebook Pages</h2>
+        </td>
+      </tr>
+      <tr class="table2-bottom">
+        <td><a href="">Official Public Relations Office</a></td>
+        <td><a href="">by Students</a></td>
+        <td><a href="">by Faculty</a></td>
+      </tr>
+    </table>
+    <p class="table2-note"></i>MUET is not responsible for any misinformation on these facebook pages.<i></i></p>
+    <hr style="width: 950px; margin-top: 30px;">
+    <p class="copyright-note">© 2009-2020. Mehran University of Engineering & Technology, Jamshoro, 76062, Sindh, Pakistan. All Rights Reserved.</p>
+  </div>
+</body>
+</html>
